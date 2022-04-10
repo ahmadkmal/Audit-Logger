@@ -1,34 +1,130 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Audit Logger
 
-## Getting Started
+## Live Demo
+[Audit Logger]()
+## 🔨 Requirement
 
-First, run the development server:
+You need [NodeJs](https://nodejs.org/en/download/) & [NPM](https://www.npmjs.com/) installed on your computer
 
-```bash
-npm run dev
-# or
-yarn dev
+
+## 💿 Installation
+
+
+
+
+
+### Clone the repository
+```  
+git clone 
+```
+```  
+cd estarta
+```
+### Install dependencies
+
+```sh
+npm install
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Run development
+```
+npm run dev
+```
+### Build for production
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+#### npm
+```sh
+npm run build
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+```
+## Requirements and Output
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- User select the date range to search Logs
 
-## Learn More
+- Display the Results in a table Structure with the following column :
+Log ID
+Application Type
+Application ID
+Action
+Action Details
+Date : Time
 
-To learn more about Next.js, take a look at the following resources:
+- Pagination :
+Display 10 records per page
+Use client side pagination
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- User will able to sort on all the columns
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- User will able to filter based on mentioned Fields :
+Employee Name
+Action type
+Application type
+From Date
+Select date
+To Date
+Application ID
+## Dependencies & Technology 
 
-## Deploy on Vercel
+- Nextjs version 12.1.4
+- Axios  version 0.24.0
+- ReactJS version 17.0.2
+- Sass version 1.26.3
+- Tailwindcss version 3.0.7
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+### Folder Structure
+```
+├── .eslintrc.json
+├── .gitignore
+├── components
+│  ├── Breadcrumb
+│  │  ├── Breadcrumb.tsx
+│  │  └── index.tsx
+│  ├── DropDownField
+│  │  ├── DropDownField.tsx
+│  │  └── index.tsx
+│  ├── InputFiled
+│  │  ├── index.tsx
+│  │  └── InputFiled.tsx
+│  ├── Pagination
+│  │  ├── index.tsx
+│  │  ├── Pagination.tsx
+│  │  └── types.tsx
+│  └── Table
+│    ├── index.tsx
+│    ├── table.module.scss
+│    ├── Table.tsx
+│    └── types.tsx
+├── libs
+│  ├── helpers
+│  │  └── index.ts
+│  └── statics
+│    └── home.ts
+├── next-env.d.ts
+├── next.config.js
+├── package-lock.json
+├── package.json
+├── pages
+│  ├── _app.tsx
+│  ├── api
+│  │  └── hello.ts
+│  └── index.tsx
+├── postcss.config.js
+├── prettier.config.js
+├── public
+│  ├── favicon.ico
+│  └── vercel.svg
+├── README.md
+├── services
+│  ├── api.js
+│  └── auditServices.ts
+├── styles
+│  └──  globals.css
+├── tailwind.config.js
+├── tsconfig.json
+└── types
+  └── pages
+    └── home.ts
+```
+

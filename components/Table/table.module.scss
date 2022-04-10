@@ -1,0 +1,31 @@
+.sort-icon{
+    &::after{
+        // arrow down
+
+        content: '\2193';
+        font-size: 1rem;
+        color: #ccc;
+        margin-left: 0.5rem;
+        transform-origin: center;
+        transform: rotate( 0deg );
+
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        height: 1em;
+        width: 1em;
+        border-radius: 50%;
+        transition: all 0.1s ease-in-out;
+        color: rgb(30, 53, 255);
+        background: lightblue;
+    }
+    &.asc{
+        &::after{
+            // flip arrow down to up
+            transform: rotate( 180deg );
+
+
+           
+        }
+    }
+}
