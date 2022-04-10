@@ -1,7 +1,7 @@
 # Audit Logger
 
 ## Live Demo
-[Audit Logger]()
+[Audit Logger](https://auditlogger.netlify.app/)
 ## 🔨 Requirement
 
 You need [NodeJs](https://nodejs.org/en/download/) & [NPM](https://www.npmjs.com/) installed on your computer
@@ -18,7 +18,7 @@ You need [NodeJs](https://nodejs.org/en/download/) & [NPM](https://www.npmjs.com
 git clone 
 ```
 ```  
-cd estarta
+cd Audit-Logger
 ```
 ### Install dependencies
 
