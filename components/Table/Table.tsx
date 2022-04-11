@@ -8,8 +8,8 @@ const Table = <T extends unknown>({
   tableBodyRow,
   itemsPerPage,
   totalPages,
+  rowKey,
 }: TableProps<T>): JSX.Element => {
-  const { current: dataRef } = React.useRef<T[]>(data)
   const [page, setPage] = React.useState(1)
   const [sortBy, setSortBy] = React.useState<{
     key: string
@@ -18,8 +18,8 @@ const Table = <T extends unknown>({
   }>({ key: '', type: '', order: '' })
   //  implement sort logic using memo
   const sortedData = React.useMemo(() => {
-    if (sortBy.key === '') return dataRef
-    const sortedData = dataRef
+    if (sortBy.key === '') return [...data]
+    const sortedData = [...data]
     // asc or desc
     const order = sortBy.order === 'asc' ? 1 : -1
     // if type equals to 'data' then convert to date
@@ -49,7 +49,7 @@ const Table = <T extends unknown>({
     const from = (page - 1) * itemsPerPage
     const to = page * itemsPerPage
     return [from, to]
-  },[page])
+  },[page,itemsPerPage])
   return (
     <div className="relative  whitespace-nowrap shadow sm:rounded-lg mb-5">
       <div className="overflow-x-auto">
@@ -93,7 +93,7 @@ const Table = <T extends unknown>({
                 return (
                   <tr
                     className="border-b bg-white text-gray-900 hover:bg-gray-50"
-                    key={index}
+                    key={''+record?.[rowKey as keyof T]||index }
                   >
                     {tableBodyRow.map((col: ColType) => {
                       return (
@@ -127,4 +127,4 @@ const Table = <T extends unknown>({
     </div>
   )
 }
-export default React.memo(Table)
+export default Table

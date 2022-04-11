@@ -120,7 +120,7 @@ const Home: React.FC<HomeProps> = ({ audit, actionType, applicationType }) => {
   const router = useRouter()
 
   const auditList = audit?.result?.auditLog || ([] as AuditRecord[])
-  const [key, setKey] = useState(0)
+  // const [key, setKey] = useState(0)
 
   // read from query string router
   const defaultValues = router.query
@@ -130,8 +130,8 @@ const Home: React.FC<HomeProps> = ({ audit, actionType, applicationType }) => {
 
     const { actionType, applicationType, fromDate, toDate, applicationId } =
       defaultValues as { [key: string]: string | undefined }
-    setKey(key + 1)
-    return auditList.filter((audit) => {
+    // setKey(key + 1)
+    return [...auditList].filter((audit) => {
       return (
         (actionType ? audit.actionType === actionType : true) &&
         (applicationType ? audit.applicationType === applicationType : true) &&
@@ -173,7 +173,7 @@ const Home: React.FC<HomeProps> = ({ audit, actionType, applicationType }) => {
         />
 
         <Table
-          key={key}
+          // rowKey='logId'
           data={filteredAuditList}
           tableHeadersRow={tableHeaders}
           itemsPerPage={10}

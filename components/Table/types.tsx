@@ -10,6 +10,7 @@ export type ColType = {
     tableHeadersRow: TableHeaderTypes[],
     tableBodyRow: ColType[],
     itemsPerPage: number,
+    rowKey?: string,
   }
  export type TableHeaderTypes = {
     title: string,
